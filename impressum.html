@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revier Comic</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Revier Comic</div>
+
+      <nav>
+        <a href="http://reviercomic.de/#comics">Comics</a>
+        <a href="http://reviercomic.de/#frank">Personen</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Impressum</h1>
+      <p>Angaben gemäß § 5 TMG</p>
+
+  <p>
+    Dominic Kannengießer<br>
+    Zimmermannstraße 19<br>
+    31812 Bad Pyrmont
+  </p>
+  <br>
+  <p>
+    Telefon: 015252381554<br>
+    E-Mail: folgt
+  </p>
+  
+  <br><br>
+  <h1>Datenschutzerklärung</h1>
+
+  <p>
+    Diese Website speichert keine Cookies und erhebt keine personenbezogenen Daten.
+  </p>
+
+  <p>
+    Beim Besuch der Website können durch den Hosting-Anbieter technisch notwendige
+    Server-Logfiles erfasst werden. Darauf hat der Betreiber dieser Website keinen direkten Einfluss.
+  </p>
+
+  <p>
+    Es werden keine Tracking- oder Analyse-Tools verwendet.
+  </p>
+  <br><br>
+  <h1>Urheberrecht</h1>
+
+  <p>
+    Alle Inhalte, Texte, Bilder und Grafiken auf dieser Website unterliegen dem Urheberrecht.
+  </p>
+
+  <p>
+    Das Urheberrecht liegt, soweit nicht anders angegeben, bei Dominic Kannengießer.
+  </p>
+
+  <p>
+    Eine Vervielfältigung oder Verwendung der Inhalte ist ohne ausdrückliche Zustimmung nicht gestattet.
+  </p>
+    </div>
+  </section>
+
+
+  <footer>
+    Revier Comic • Frank • Rudi • Büdchen ⚒️<br><br> <a href="impressum.html">Impressum</a>
+  </footer>
+  
+  
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>
+    🍪 Ey Kumpel, auch wir benutzen Cookies.
+    Hauptsächlich damit hier nich alles auseinanderfällt.
+    Wenn du weiter hier rumhängst, is dat für uns ein Ja.
+  </p>
+
+  <div class="cookie-buttons">
+    <button class="accept-btn" onclick="acceptCookies()">
+      Jo, passt
+    </button>
+
+    <button class="decline-btn" onclick="declineCookies()">
+      Nerv nich
+    </button>
+  </div>
+</div>
+
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: white;
+    border: 5px solid #111;
+    box-shadow: 10px 10px 0 #111;
+    padding: 20px;
+    z-index: 99999;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  #cookie-banner p {
+    font-weight: bold;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cookie-buttons button {
+    border: 3px solid #111;
+    padding: 10px 16px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.15s;
+  }
+
+  .accept-btn {
+    background: #e0c84f;
+  }
+
+  .decline-btn {
+    background: white;
+  }
+
+  .cookie-buttons button:hover {
+    transform: rotate(-1deg) scale(1.03);
+  }
+
+  @media (max-width: 700px) {
+    #cookie-banner {
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      padding: 15px;
+    }
+
+    .cookie-buttons {
+      width: 100%;
+    }
+
+    .cookie-buttons button {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  function acceptCookies() {
+    localStorage.setItem('pottgeschichten-cookies', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  function declineCookies() {
+    localStorage.setItem('pottgeschichten-cookies', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', function () {
+    const cookieChoice = localStorage.getItem('pottgeschichten-cookies');
+
+    if (cookieChoice) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
