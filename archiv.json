@@ -2,13 +2,19 @@
     {
         "titel": "Alltag im Revier",
         "datum": "10.05.2026",
-        "bild": "img/comic/01.jpg",
+        "bild": "img/comic/01.png",
+        "link": "#"
+    },
+     {
+        "titel": "Ruhrpott Slang",
+        "datum": "13.05.2026",
+        "bild": "img/comic/02.png",
         "link": "#"
     },
     {
-        "titel": "Folge 2",
+        "titel": "Rudi erklärt Fußball",
         "datum": "16.05.2026",
-        "bild": "bilder/comic2.jpg",
-        "link": "comic2.html"
+        "bild": "img/comic/03.png",
+        "link": "#"
     }
 ]
