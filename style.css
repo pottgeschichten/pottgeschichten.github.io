@@ -433,4 +433,37 @@ footer {
     height: 60px;
   }
 
+  #archiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.comic-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.comic-card:hover {
+    transform: scale(1.03);
+}
+
+.comic-card img {
+    width: 100%;
+    display: block;
+}
+
+.comic-card h2,
+.comic-card p {
+    padding: 10px;
+    margin: 0;
+}
+
+.comic-card a {
+    text-decoration: none;
+    color: white;
+}
+
 }
