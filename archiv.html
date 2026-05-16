@@ -57,7 +57,19 @@
     </style>
 </head>
 <body>
+<header>
+    <div class="header-inner">
+      <div class="logo">Revier Comic</div>
 
+      <nav>
+        <a href="#comics">Comics</a>
+        <a href="#frank">Personen</a>
+		<a href="archiv.html">Archiv</a>
+
+        
+      </nav>
+    </div>
+  </header>
     <h1>Archiv</h1>
 
     <div id="archiv"></div>
@@ -78,7 +90,7 @@
                     card.className = "comic-card";
 
                     card.innerHTML = `
-                        <a href="http://reviercomic.de/img/comic/${eintrag.bild}" target="blank">
+                        <a href="http://reviercomic.de/${eintrag.bild}" target="blank">
                             <img src="${eintrag.bild}" alt="${eintrag.titel}">
                             <h2>${eintrag.titel}</h2>
                             <p>${eintrag.datum}</p>
