@@ -111,6 +111,90 @@
 
         ladeArchiv();
     </script>
+	  <footer>
+    Revier Comic • Frank • Rudi • Büdchen ⚒️<br><br> <a href="impressum.html">Impressum</a>
+	<a class="pott-mail-btn" href="mailto:kagi_1992@hotmail.com">
+  📬 Schreib uns
+</a>
+  </footer>
+  
+  
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>
+    🍪 Ey Kumpel, auch wir benutzen Cookies.
+    Hauptsächlich damit hier nich alles auseinanderfällt.
+    Wenn du weiter hier rumhängst, is dat für uns ein Ja.
+  </p>
+
+  <div class="cookie-buttons">
+    <button class="accept-btn" onclick="acceptCookies()">
+      Jo, passt
+    </button>
+
+    <button class="decline-btn" onclick="declineCookies()">
+      Nerv nich
+    </button>
+  </div>
+</div>
+
+ 
+
+<script>
+  function acceptCookies() {
+    localStorage.setItem('pottgeschichten-cookies', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  function declineCookies() {
+    localStorage.setItem('pottgeschichten-cookies', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', function () {
+    const cookieChoice = localStorage.getItem('pottgeschichten-cookies');
+
+    if (cookieChoice) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  });
+</script>
+
+<!-- WHATSAPP CHANNEL BUTTON -->
+
+<div id="wa-widget">
+
+  <button id="wa-toggle" onclick="toggleWhatsappWidget()">
+    💬
+  </button>
+
+  <div id="wa-box">
+    <h3>WhatsApp Kanal</h3>
+
+    <p>
+      Ey Kumpel 👋<br>
+      Komm in den Kanal für neue Strips,
+      Chaos und Ruhrpott-Gelaber.
+    </p>
+
+    <img src="img/whatsapp-qr.png" alt="WhatsApp QR Code">
+
+    <a href="https://whatsapp.com/channel/0029VbCOjAv1yT248TCpHI2S" target="_blank">
+      Kanal öffnen
+    </a>
+  </div>
+
+</div>
+
+
+
+<script>
+
+function toggleWhatsappWidget() {
+  document.getElementById('wa-box').classList.toggle('active');
+}
+
+</script>
 
 </body>
 </html>
