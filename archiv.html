@@ -24,49 +24,40 @@
 
   <section class="hero">
     <div class="hero-box">
-      <h1>Impressum</h1>
-      <p>Angaben gemäß § 5 TMG</p>
+<div id="archiv"></div>
 
-  <p>
-    Dominic Kannengießer<br>
-    Zimmermannstraße 19<br>
-    31812 Bad Pyrmont
-  </p>
-  <br>
-  <p>
-    Telefon: 015252381554<br>
-    E-Mail: folgt
-  </p>
-  
-  <br><br>
-  <h1>Datenschutzerklärung</h1>
+<script>
+async function ladeArchiv() {
+    const container = document.getElementById("archiv");
 
-  <p>
-    Diese Website speichert keine Cookies und erhebt keine personenbezogenen Daten.
-  </p>
+    try {
+        const response = await fetch("archiv.json");
+        const daten = await response.json();
 
-  <p>
-    Beim Besuch der Website können durch den Hosting-Anbieter technisch notwendige
-    Server-Logfiles erfasst werden. Darauf hat der Betreiber dieser Website keinen direkten Einfluss.
-  </p>
+        daten.forEach(eintrag => {
 
-  <p>
-    Es werden keine Tracking- oder Analyse-Tools verwendet.
-  </p>
-  <br><br>
-  <h1>Urheberrecht</h1>
+            const card = document.createElement("div");
+            card.className = "comic-card";
 
-  <p>
-    Alle Inhalte, Texte, Bilder und Grafiken auf dieser Website unterliegen dem Urheberrecht.
-  </p>
+            card.innerHTML = `
+                <a href="${eintrag.link}">
+                    <img src="${eintrag.bild}" alt="${eintrag.titel}">
+                    <h2>${eintrag.titel}</h2>
+                    <p>${eintrag.datum}</p>
+                </a>
+            `;
 
-  <p>
-    Das Urheberrecht liegt, soweit nicht anders angegeben, bei Dominic Kannengießer.
-  </p>
+            container.appendChild(card);
+        });
 
-  <p>
-    Eine Vervielfältigung oder Verwendung der Inhalte ist ohne ausdrückliche Zustimmung nicht gestattet.
-  </p>
+    } catch (fehler) {
+        container.innerHTML = "<p>Archiv konnte nicht geladen werden.</p>";
+        console.error(fehler);
+    }
+}
+
+ladeArchiv();
+</script>
     </div>
   </section>
 

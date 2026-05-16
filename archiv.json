@@ -1,0 +1,14 @@
+[
+    {
+        "titel": "Folge 1",
+        "datum": "10.05.2026",
+        "bild": "img/comic/01.jpg",
+        "link": "comic1.html"
+    },
+    {
+        "titel": "Folge 2",
+        "datum": "16.05.2026",
+        "bild": "bilder/comic2.jpg",
+        "link": "comic2.html"
+    }
+]
