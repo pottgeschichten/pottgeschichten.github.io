@@ -1,149 +1,104 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revier Comic</title>
-  <link rel="stylesheet" href="style.css">
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archiv - Reviercomic</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #archiv {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .comic-card {
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .comic-card:hover {
+            transform: scale(1.03);
+        }
+
+        .comic-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .comic-card h2,
+        .comic-card p {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .comic-card a {
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            #archiv {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            #archiv {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="logo">Revier Comic</div>
+    <h1>Archiv</h1>
 
-      <nav>
-        <a href="http://reviercomic.de/#comics">Comics</a>
-        <a href="http://reviercomic.de/#frank">Personen</a>
-		<a href="archiv.html">Archiv</a>
+    <div id="archiv"></div>
 
-        
-      </nav>
-    </div>
-  </header>
+    <script>
+        async function ladeArchiv() {
 
-  <section class="hero">
-    <div class="hero-box">
-<div id="archiv"></div>
+            const container = document.getElementById("archiv");
 
-<script>
-async function ladeArchiv() {
-    const container = document.getElementById("archiv");
+            try {
 
-    try {
-        const response = await fetch("archiv.json");
-        const daten = await response.json();
+                const response = await fetch("archiv.json");
+                const daten = await response.json();
 
-        daten.forEach(eintrag => {
+                daten.forEach(eintrag => {
 
-            const card = document.createElement("div");
-            card.className = "comic-card";
+                    const card = document.createElement("div");
+                    card.className = "comic-card";
 
-            card.innerHTML = `
-                <img src="${eintrag.bild}" alt="${eintrag.titel}" width="50%">
-                    <h2>${eintrag.titel}</h2>
-                    <p>${eintrag.datum}</p>
-                </a>
-            `;
+                    card.innerHTML = `
+                        <a href="${eintrag.link}">
+                            <img src="${eintrag.bild}" alt="${eintrag.titel}">
+                            <h2>${eintrag.titel}</h2>
+                            <p>${eintrag.datum}</p>
+                        </a>
+                    `;
 
-            container.appendChild(card);
-        });
+                    container.appendChild(card);
 
-    } catch (fehler) {
-        container.innerHTML = "<p>Archiv konnte nicht geladen werden.</p>";
-        console.error(fehler);
-    }
-}
+                });
 
-ladeArchiv();
-</script>
-    </div>
-  </section>
+            } catch (fehler) {
 
+                container.innerHTML = "<p>Archiv konnte nicht geladen werden.</p>";
+                console.error(fehler);
 
-    <footer>
-    Revier Comic • Frank • Rudi • Büdchen ⚒️<br><br> <a href="impressum.html">Impressum</a>
-	<a class="pott-mail-btn" href="mailto:kagi_1992@hotmail.com">
-  📬 Schreib uns
-</a>
-  </footer>
-  
-  
-<!-- COOKIE BANNER -->
-<div id="cookie-banner">
-  <p>
-    🍪 Ey Kumpel, auch wir benutzen Cookies.
-    Hauptsächlich damit hier nich alles auseinanderfällt.
-    Wenn du weiter hier rumhängst, is dat für uns ein Ja.
-  </p>
+            }
+        }
 
-  <div class="cookie-buttons">
-    <button class="accept-btn" onclick="acceptCookies()">
-      Jo, passt
-    </button>
+        ladeArchiv();
+    </script>
 
-    <button class="decline-btn" onclick="declineCookies()">
-      Nerv nich
-    </button>
-  </div>
-</div>
-
-
-
-<script>
-  function acceptCookies() {
-    localStorage.setItem('pottgeschichten-cookies', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  function declineCookies() {
-    localStorage.setItem('pottgeschichten-cookies', 'declined');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  window.addEventListener('load', function () {
-    const cookieChoice = localStorage.getItem('pottgeschichten-cookies');
-
-    if (cookieChoice) {
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-  });
-</script>
-
-<!-- WHATSAPP CHANNEL BUTTON -->
-
-<div id="wa-widget">
-
-  <button id="wa-toggle" onclick="toggleWhatsappWidget()">
-    💬
-  </button>
-
-  <div id="wa-box">
-    <h3>WhatsApp Kanal</h3>
-
-    <p>
-      Ey Kumpel 👋<br>
-      Komm in den Kanal für neue Strips,
-      Chaos und Ruhrpott-Gelaber.
-    </p>
-
-    <img src="img/whatsapp-qr.png" alt="WhatsApp QR Code">
-
-    <a href="https://whatsapp.com/channel/0029VbCOjAv1yT248TCpHI2S" target="_blank">
-      Kanal öffnen
-    </a>
-  </div>
-
-</div>
-
-
-
-<script>
-
-function toggleWhatsappWidget() {
-  document.getElementById('wa-box').classList.toggle('active');
-}
-
-</script>
 </body>
 </html>
