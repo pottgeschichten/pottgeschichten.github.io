@@ -241,4 +241,23 @@
         width: 100%;
         text-align: center;
       }
+	  .pott-mail-btn{
+  display:inline-block;
+  margin-top:20px;
+  background:#e0c84f;
+  color:#111;
+  text-decoration:none;
+  border:4px solid #111;
+  padding:14px 20px;
+  font-weight:900;
+  text-transform:uppercase;
+  box-shadow:6px 6px 0 #111;
+  transition:0.15s;
+}
+
+.pott-mail-btn:hover{
+  background:#111;
+  color:white;
+  transform:rotate(-2deg) scale(1.03);
+}
     }
