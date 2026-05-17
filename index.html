@@ -223,11 +223,21 @@
 
   </section>
 
-  <footer>
-    Revier Comic • Frank • Rudi • Büdchen ⚒️<br><br> <a href="impressum.html">Impressum</a>
+ <footer>
+    Revier Comic • Frank • Rudi • Büdchen ⚒️ <div id="visitor-count">⚒️ 0</div>
+
+<script>
+fetch("https://reviercomic.goatcounter.com/counter/TOTAL.json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("visitor-count").innerText =
+      "⚒️ " + data.count;
+  });
+</script><br><br> <a href="impressum.html">Impressum</a>
 	<a class="pott-mail-btn" href="mailto:kagi_1992@hotmail.com">
   📬 Schreib uns
 </a>
+
   </footer>
   
   
