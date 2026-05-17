@@ -47,16 +47,7 @@
   <meta name="twitter:description" content="Geschichten aus’m Ruhrpott. Zwischen Fußball, Büdchen und Feierabendbier.">
 
   <meta name="twitter:image" content="https://reviercomic.de/img/social-preview.jpg">
-	<script
-    data-goatcounter="https://reviercomic.goatcounter.com/count"
-    async
-    src="//gc.zgo.at/count.js">
-</script>
-
-<script
-    async
-    src="//gc.zgo.at/stat.js">
-</script>
+	
   </head>
 <body>
 
@@ -233,7 +224,8 @@
  <footer>
     Revier Comic • Frank • Rudi • Büdchen ⚒️ 
 	 <div id="visitor-count">
-  ⚒️ <span data-goatcounter-stat="total"></span>
+  ⚒️ <span id="gc-count">0</span>
+</div>
 </div>
 	 <br><br> <a href="impressum.html">Impressum</a>
 	<a class="pott-mail-btn" href="mailto:kagi_1992@hotmail.com">
@@ -317,6 +309,35 @@ function toggleWhatsappWidget() {
   document.getElementById('wa-box').classList.toggle('active');
 }
 
+</script>
+	<script
+    data-goatcounter="https://reviercomic.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+</script>
+
+<script>
+async function ladeBesucherzahl() {
+
+    try {
+
+        const response = await fetch(
+            "https://reviercomic.goatcounter.com/counter/TOTAL.json"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("gc-count").innerText =
+            data.count;
+
+    } catch (e) {
+
+        console.log("Counter Fehler");
+
+    }
+}
+
+ladeBesucherzahl();
 </script>
 </body>
 </html>
