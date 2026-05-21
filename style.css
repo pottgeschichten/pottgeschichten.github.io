@@ -440,6 +440,50 @@ footer {
     opacity: 0.7;
 
     text-align: center;
+  
 }
+ #lightbox {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.92);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+
+    cursor: zoom-out;
+}
+
+#lightbox img {
+
+    max-width: 95%;
+    max-height: 95%;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.comic-card img {
+
+    cursor: zoom-in;
+
+    transition: 0.2s ease;
+}
+
+.comic-card img:hover {
+
+    transform: scale(1.02);
+} 
 
 }
