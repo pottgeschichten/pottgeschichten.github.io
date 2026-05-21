@@ -80,14 +80,24 @@
   <section class="comic-grid">
 
     <div class="comic-card">
-      <img src="img/comic/04.png" alt="Comic aktuell ">
-      <div class="comic-info">
-        <h3>Buuuuh!</h3>
-        <p>
-          Frank und Rudi diskutieren über Merz und seine realitätsfremde Politik.
-        </p>
-      </div>
-    </div>
+
+  <img
+    src="img/comic/04.png"
+    alt="Comic aktuell"
+    onclick="openLightbox(this.src)"
+  >
+
+  <div class="comic-info">
+
+    <h3>Buuuuh!</h3>
+
+    <p>
+      Frank und Rudi diskutieren über Merz und seine realitätsfremde Politik.
+    </p>
+
+  </div>
+
+</div>
 
     <div class="comic-card">
       <img src="img/comic/05.png" alt="Comic aktuell">
@@ -347,5 +357,26 @@ async function ladeBesucherzahl() {
 
 ladeBesucherzahl();
 </script>
+<script>
+
+function openLightbox(src) {
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+
+    document.getElementById("lightbox").style.display = "none";
+}
+
+</script>
+
+<div id="lightbox" onclick="closeLightbox()">
+
+    <img id="lightbox-img">
+
+</div>	
 </body>
 </html>
