@@ -129,7 +129,7 @@ a:hover {
   width: 100%;
   display: block;
   background: #cfcfcf;
-  aspect-ratio: 9/16;
+  margin: 0 auto;
   object-fit: cover;
 }
 
