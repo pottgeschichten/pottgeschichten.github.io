@@ -442,60 +442,6 @@ footer {
     text-align: center;
   
 }
- #lightbox {
 
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,0.9);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    z-index: 99999;
-
-    padding: 30px;
-
-    box-sizing: border-box;
-}
-
-#lightbox img {
-
-    width: auto;
-
-    max-width: 700px;
-
-    max-height: 85vh;
-
-    object-fit: contain;
-
-    border-radius: 12px;
-
-    display: block;
-
-    margin: auto;
-
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
-}
-
-.comic-card img {
-
-    cursor: zoom-in;
-}
-
-.comic-card img {
-
-    cursor: zoom-in;
-
-    transition: 0.2s ease;
-}
-
-.comic-card img:hover {
-
-    transform: scale(1.02);
-} 
 
 }
