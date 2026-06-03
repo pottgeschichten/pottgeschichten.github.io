@@ -442,6 +442,66 @@ footer {
     text-align: center;
   
 }
+/* Werbebox links */
 
-
+.ad-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 205px;
+    width: 220px;
+    padding: 20px;
+    background: #f4f4f4;
+    border: 4px dashed #111;
+    box-shadow: 6px 6px 0 #111;
+    z-index: 999;
 }
+
+.ad-sidebar h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.ad-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #d6c04f;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #000;
+}
+
+.ad-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* Hauptinhalt etwas nach rechts schieben */
+
+.hero,
+.comics-section,
+#comics {
+    margin-left: 280px;
+}
+
+/* Mobil ausblenden */
+
+@media (max-width: 1200px) {
+    .ad-sidebar {
+        display: none;
+    }
+
+    .hero,
+    .comics-section,
+    #comics {
+        margin-left: 0;
+    }
+}  
