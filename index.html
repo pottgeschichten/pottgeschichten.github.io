@@ -64,7 +64,16 @@
       </nav>
     </div>
   </header>
+<div class="ad-sidebar" id="adSidebar">
+    <button class="ad-close" onclick="toggleAd()">×</button>
 
+    <h3>WERBUNG</h3>
+    <p>Hier könnte deine Werbung stehen.</p>
+
+    <a href="#" class="ad-button">
+        Mehr erfahren
+    </a>
+</div>
   <section class="hero">
     <div class="hero-box">
       <h1>Geschichten aus'm Revier</h1>
@@ -375,6 +384,17 @@ async function ladeBesucherzahl() {
 }
 
 ladeBesucherzahl();
+</script>
+	<script>
+function toggleAd() {
+    const ad = document.getElementById("adSidebar");
+
+    if (ad.style.display === "none") {
+        ad.style.display = "block";
+    } else {
+        ad.style.display = "none";
+    }
+}
 </script>
 </body>
 </html>
