@@ -442,66 +442,84 @@ footer {
     text-align: center;
   
 }
-/* Werbebox links */
+  }
+/* ===================================
+   WERBUNG
+=================================== */
 
 .ad-sidebar {
     position: fixed;
-    left: 20px;
-    top: 205px;
-    width: 220px;
-    padding: 20px;
-    background: #f4f4f4;
+
+    top: 190px;
+
+    /* links neben dem Content */
+    left: calc(50% - 820px);
+
+    width: 240px;
+
+    background: #fff;
+
     border: 4px dashed #111;
+
     box-shadow: 6px 6px 0 #111;
+
+    padding: 20px;
+
     z-index: 999;
 }
 
 .ad-sidebar h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.ad-sidebar p {
+    margin-bottom: 15px;
 }
 
 .ad-button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 16px;
-    background: #d6c04f;
-    color: #000;
-    text-decoration: none;
+
+    background: #e0c84f;
+
+    border: 3px solid #111;
+
+    padding: 10px 14px;
+
     font-weight: bold;
-    border: 2px solid #000;
+
+    color: #111;
+
+    text-decoration: none;
+}
+
+.ad-button:hover {
+    background: #111;
+    color: #fff;
 }
 
 .ad-close {
     position: absolute;
-    right: 8px;
+
     top: 8px;
+    right: 8px;
+
     width: 28px;
     height: 28px;
+
+    border: 2px solid #111;
+
     border-radius: 50%;
-    border: 2px solid #000;
+
+    background: white;
+
     cursor: pointer;
-    background: #fff;
 }
 
-/* Hauptinhalt etwas nach rechts schieben */
+/* Auf kleineren Monitoren ausblenden */
 
-.hero,
-.comics-section,
-#comics {
-    margin-left: 280px;
-}
-
-/* Mobil ausblenden */
-
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
     .ad-sidebar {
         display: none;
     }
-
-    .hero,
-    .comics-section,
-    #comics {
-        margin-left: 0;
-    }
-}  
+}
